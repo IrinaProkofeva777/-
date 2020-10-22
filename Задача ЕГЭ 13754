@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	     Scanner scanner = new Scanner(System.in);
+	int s = 4; //требуемое расстояние между элементами 
+  int n; 
+  int n1 = 0; int n2 = 0; int n3 = 0; int n4 = 0;  
+  //хранение последних s счетчиков 
+  int a;  // очередное значение 
+  int cnt; // количество искомых пар
+  System.out.println("Введите количество чисел: "); 
+  n=scanner.nextInt(); 
+  cnt = 0; 
+  for (int i = 0; i < n; ++i) 
+  { 
+       System.out.println("Введите значение: ");
+       a=scanner.nextInt(); // считано очередное значение 
+    if (i >= s) 
+    { 
+        if (a % 29 == 0) 
+        cnt += i - s + 1; 
+        else 
+        cnt += n4; 
+    } 
+    //сдвигаем элементы счетчиков 
+    n4 = n3; 
+    n3 = n2; 
+    n2 = n1; 
+    //обновляем счетчик кратных 29 
+    if (a % 29 == 0) 
+        n1 += 1; 
+  } 
+  System.out.println("Количество искомых пар"+  cnt); 
+  return ; 
+}
+	}
